@@ -118,8 +118,8 @@ const ProductDetail = () => {
     }
   };
 
-  const handleDirector = () => {
-    history.push("/evaluation/" + id);
+  const viewBookOnline = (url) => {
+    window.location.href = url;
   };
 
   const addCart = (product) => {
@@ -387,9 +387,8 @@ const ProductDetail = () => {
                       <span
                         key={color}
                         style={{ backgroundColor: color }} // Sửa đổi ở đây
-                        className={`dot ${
-                          selectedColor === color ? "active" : ""
-                        }`}
+                        className={`dot ${selectedColor === color ? "active" : ""
+                          }`}
                         onClick={() => handleClick(color)}
                       ></span>
                     ))}
@@ -410,6 +409,14 @@ const ProductDetail = () => {
                       onClick={() => addCart(productDetail)}
                     >
                       Thêm vào giỏ
+                    </Button>
+                    <Button
+                      type="primary"
+                      className="cart"
+                      size="large"
+                      onClick={() => viewBookOnline(productDetail.url_book)}
+                    >
+                      Xem sách online
                     </Button>
                   </div>
                 </Card>

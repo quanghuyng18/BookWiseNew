@@ -138,9 +138,9 @@ const DashBoard = () => {
                 <div className="card_number">
                   <div>
                     <div className="number_total">
-                      {statisticList.userTotal}
+                      {statisticList.totalIncome?.toLocaleString('vi', { style: 'currency', currency: 'VND' })}
                     </div>
-                    <div className="title_total">Số thành viên</div>
+                    <div className="title_total">Tổng doanh thu</div>
                   </div>
                   <div>
                     <ContactsTwoTone style={{ fontSize: 48 }} />
